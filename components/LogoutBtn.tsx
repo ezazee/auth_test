@@ -1,19 +1,19 @@
-"use client"
-import React from 'react'
+"use client";
+import React from "react";
 import Cookies from "js-cookie";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const LogoutBtn = () => {
-      const router = useRouter();
+  const router = useRouter();
 
-const handleLogout = () => {
-  // Hapus token JWT dari cookie
-  Cookies.remove("jwt_token");
+  const handleLogout = () => {
+    // Hapus token JWT dari cookie
+    Cookies.remove("jwt_token");
 
-  // Redirect ke halaman login
-  router.push("/");
-};
-    return (
+    // Redirect ke halaman login
+    router.push("/");
+  };
+  return (
     <div className="hidden mr-3 -mb-1 sm:block">
       <button
         onClick={handleLogout}
@@ -23,6 +23,6 @@ const handleLogout = () => {
       </button>
     </div>
   );
-}
+};
 
-export default LogoutBtn
+export default LogoutBtn;

@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 const FormLogin: React.FC = () => {
-  const Cookies = require("js-cookie");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -16,7 +16,7 @@ const FormLogin: React.FC = () => {
 
     try {
       const response = await fetch(
-        `https://api-isat.bejo6.com/api/v1/auth/login`,
+        "https://api-isat.bejo6.com/api/v1/auth/login",
         {
           method: "POST",
           headers: {
@@ -89,7 +89,7 @@ const FormLogin: React.FC = () => {
           disabled={isLoading}
           className="w-full text-white bg-blue-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
         >
-          {isLoading ? "Signing in..." : "Sign in"}
+          {isLoading ? "Signing..." : "Sign in"}
         </button>
         <p className="text-sm font-light text-gray-500 dark:text-gray-400">
           Don’t have an account yet?{" "}
