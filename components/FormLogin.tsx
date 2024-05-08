@@ -9,14 +9,16 @@ const FormLogin: React.FC = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const apiLogin = `${process.env.NEXT_PUBLIC_API_AUTH}/api/v1/auth/login`;
+  
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
-
     try {
       const response = await fetch(
-        "https://api-isat.bejo6.com/api/v1/auth/login",
+        `${apiLogin}`,
+        // "https://api-isat.bejo6.com/api/v1/auth/login",
         {
           method: "POST",
           headers: {
