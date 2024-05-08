@@ -12,11 +12,6 @@ export function middleware(request: NextRequest) {
     const decodedToken = jwtDecode(currentUser);
     const userId = decodedToken.sub;
     const expDate = decodedToken.exp;
-
-    console.log("User ID:", userId);
-    console.log("Expire:", expDate);
-
-    console.log(decodedToken);
   }
 
   if (isPublic && currentUser) {
